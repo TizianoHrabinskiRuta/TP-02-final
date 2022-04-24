@@ -7,35 +7,35 @@ using UnityEngine.UI;
 public class ClickHandler : MonoBehaviour
 {
 
-    public Text ContraseniaIngresada;
-    
-     static string ContraseniaCorrecta = "12345";
+    public Text ContraseniaIngresada; //Referencia al texto del InputField
+    public Text MessageText; // Referencia al texto del cartel que dice si puso bien la contraseña o no
+    public GameObject CartelitoDeMensaje; // Referencia al panel del cartel previamente mencionado
+    static string ContraseniaCorrecta = "12345";
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
-
+        CartelitoDeMensaje.SetActive(false);
     }
 
     public void ValidarContrasenia()
     {
-        
-
-         if(ContraseniaIngresada.text == ContraseniaCorrecta)
+        if(ContraseniaIngresada.text == ContraseniaCorrecta)
         {
-            Debug.Log("bienvenido manito");
+            MessageText.text = "Contraseña correcta";
+           
+            CartelitoDeMensaje.SetActive(true);
+
             return;
         }
 
-        Debug.Log("no, largo de aca");
-
+        MessageText.text = "Contraseña incorrecta";
+        CartelitoDeMensaje.SetActive(true);
+       
     }
 
     // Update is called once per frame
     void Update()
-    {
-       
-    }
+    {}
 }
