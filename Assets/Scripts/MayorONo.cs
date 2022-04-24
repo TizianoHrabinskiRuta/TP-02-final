@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestScript : MonoBehaviour
+public class MayorONo : MonoBehaviour
 {
 
     public Text Texto1;
